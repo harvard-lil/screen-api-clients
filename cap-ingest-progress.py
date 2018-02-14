@@ -19,7 +19,6 @@ deltas = []
 maxdeltas = 10
 
 while True:
-    output = subprocess.check_output(["redis-cli", "-n", "1", "keys", "'*'"])
     volumes = len(subprocess.check_output("redis-cli -n 1 keys \*", shell=True).split())
     p = "🎓 %s keys to go in CAP ingest" % humanize.intcomma(volumes)
     if last:
